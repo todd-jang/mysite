@@ -94,7 +94,7 @@ public class UserController extends HttpServlet {
 			HttpSession session = request.getSession();
 			UserVo authUser = (UserVo)session.getAttribute("authUser");
 			if(authUser == null) {
-				MvcUtil.redirect(request.getContextPath(), request, response);
+				response.sendRedirect(request.getContextPath());
 				return;
 			}
 			//////////////////////////////////////////////////////
@@ -112,7 +112,7 @@ public class UserController extends HttpServlet {
 			new UserDao().update(vo);
 			authUser.setName(name);
 			
-			MvcUtil.redirect(request.getContextPath() + "/user?a=updateform", request, response);
+			response.sendRedirect(request.getContextPath() + "/user?a=updateform");
 		} 
 	}
 

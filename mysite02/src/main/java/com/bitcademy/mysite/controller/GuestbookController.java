@@ -1,10 +1,15 @@
 package com.bitcademy.mysite.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.bitcademy.mysite.dao.GuestbookDao;
+import com.bitcademy.mysite.vo.GuestbookVo;
 
 public class GuestbookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,9 +24,9 @@ public class GuestbookController extends HttpServlet {
 			String password = request.getParameter("password");
 			
 			new GuestbookDao().deleteByNoAndPassword(no, password);
-			MvcUtil.redirect(request.getContextPath() + "/guestbook", request, response);	
+			response.sendRedirect(request.getContextPath() + "/guestbook");	
 		} else if("deleteform".equals(actionName)) {
-			MvcUtil.forward("guestbook/deleteform", request, response);
+			request.getRequestDispatcher("/WEB-INF/views/guestbook/deleteform.jsp").forward(request, response);
 		} else if("add".equals(actionName)) {
 			String name = request.getParameter("name");
 			String password = request.getParameter("password");
@@ -38,12 +43,11 @@ public class GuestbookController extends HttpServlet {
 			List<GuestbookVo> list = new GuestbookDao().findAll();
 		
 			request.setAttribute("list", list);
-			MvcUtil.forward("guestbook/list", request, response);
+			request.getRequestDispatcher("/WEB-INF/views/guestbook/list.jsp").forward(request, response);
 		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
