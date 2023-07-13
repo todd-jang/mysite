@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bitcademy.mysite.dao.UserDao;
 import com.bitcademy.mysite.vo.UserVo;
@@ -59,8 +60,35 @@ public class UserController extends HttpServlet {
 				return;
 			}
 			
-			// 인증 성공
-			System.out.println("로그인 처리");
+			// 로그인 처리
+			HttpSession session = request.getSession(true);
+			session.setAttribute("authUser", authUser);
+			
+			response.sendRedirect(request.getContextPath());
+		} else if("logout".equals(actionName)) {
+			HttpSession session = request.getSession();
+			
+			session.removeAttribute("authUser");
+			session.invalidate();
+			
+			response.sendRedirect(request.getContextPath());
+		} else if("updateform".equals(actionName)) {
+			// Access Control
+			///////////////////////////////////////////////////////////
+			HttpSession session = request.getSession();
+			UserVo authUser = (UserVo)session.getAttribute("authUser");
+			if(authUser == null) {
+				response.sendRedirect(request.getContextPath());
+				return;
+			}
+			///////////////////////////////////////////////////////////
+			
+			UserVo userVo = new UserDao().findByNo(authUser.getNo());
+			request.setAttribute("userVo", userVo);
+			
+			request
+				.getRequestDispatcher("/WEB-INF/views/user/updateform.jsp")
+				.forward(request, response);				
 		}
 	}
 
