@@ -2,9 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	// pageContext.setAttibute("count", );
-%>
+<% pageContext.setAttribute("newline", "\n"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +43,7 @@
 								</tr>
 								<tr>
 									<td colspan=4>
-										${vo.message }
+										${fn:replace(vo.message, newline, "<br>") }
 									</td>
 								</tr>
 							</table>
