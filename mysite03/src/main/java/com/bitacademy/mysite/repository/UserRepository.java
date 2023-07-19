@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 import org.springframework.stereotype.Repository;
 
+import com.bitacademy.mysite.exception.UserRepositoryException;
 import com.bitacademy.mysite.vo.UserVo;
 
 @Repository
@@ -56,11 +57,11 @@ public class UserRepository {
 		return result;
 	}
 	
-	public UserVo findByEmailAndPassword(UserVo vo) {
+	public UserVo findByEmailAndPassword(UserVo vo) throws UserRepositoryException {
 		return findByEmailAndPassword(vo.getEmail(), vo.getPassword());
 	}
 	
-	public UserVo findByEmailAndPassword(String email, String password) {
+	public UserVo findByEmailAndPassword(String email, String password) throws UserRepositoryException {
 		UserVo result = null;
 		
 		Connection conn = null;
@@ -71,7 +72,7 @@ public class UserRepository {
 			conn = getConnection();
 			
 			String sql =
-				"select no, name" + 
+				"elect no, name" + 
 				"  from user" + 
 				" where email = ?" + 
 				"   and password = password(?)";
@@ -91,7 +92,8 @@ public class UserRepository {
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("Error:" + e);
+			throw new UserRepositoryException(e.toString());
+			
 		} finally {
 			try {
 				if(rs != null) {
