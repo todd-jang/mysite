@@ -1,4 +1,4 @@
-package com.douzone.mysite.controller;
+package com.bitacademy.mysite.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.douzone.mysite.service.GuestbookService;
-import com.douzone.mysite.vo.GuestbookVo;
+import com.bitacademy.mysite.service.GuestbookService;
+import com.bitacademy.mysite.vo.GuestbookVo;
 
 @Controller
 @RequestMapping("/guestbook")
