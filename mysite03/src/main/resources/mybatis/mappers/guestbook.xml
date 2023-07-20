@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="guestbook">
-	<select id="findAll" resultType="com.bitacademy.mysite.vo.GuestbookVo">
+	<select id="findAll" resultType="guestbookvo">
 		<![CDATA[ 
 		  select no,
 			     name,
@@ -13,11 +13,19 @@
 		]]>  
 	</select>
 	
-	<insert id="insert" parameterType="com.bitacademy.mysite.vo.GuestbookVo">
+	<insert id="insert" parameterType="guestbookvo">
 		<![CDATA[
 		insert
 		  into guestbook
 		values (null, #{name }, #{password }, #{message }, now())
 		]]>	
 	</insert>
+	
+	<delete id="deleteByNoAndPassword" parameterType="map">
+		<![CDATA[
+		delete
+		  from guestbook
+		 where no = #{no } and password = #{password }
+		]]>	
+	</delete>
 </mapper>
