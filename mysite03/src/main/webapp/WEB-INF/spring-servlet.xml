@@ -11,8 +11,19 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- validator등록, conversionService 등록, messageConverter 등록 -->
-	<mvc:annotation-driven />
+	<!-- 
+		validator, 
+		conversionService,
+		messageConverter,
+		ArgumentResolver 
+		등록 -->
+	<mvc:annotation-driven>
+		
+		<mvc:argument-resolvers>
+			<bean class="com.bitacademy.mysite.security.AuthUserHandlerMethodArgumentResolver" />
+		</mvc:argument-resolvers>
+		
+	</mvc:annotation-driven>
 
 	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
 	<mvc:default-servlet-handler/>
