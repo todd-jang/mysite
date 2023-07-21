@@ -18,6 +18,7 @@ public class GlobalExceptionHandler {
 		//1. 로깅
 		StringWriter errors = new StringWriter();
 		ex.printStackTrace(new PrintWriter(errors));
+		
 		logger.error(errors.toString());
 		
 		//2. 사과
