@@ -1,4 +1,4 @@
-package com.douzone.mysite.controller;
+package com.bitacademy.mysite.controller;
 
 import java.util.Map;
 
@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.douzone.mysite.security.Auth;
-import com.douzone.mysite.security.AuthUser;
-import com.douzone.mysite.service.BoardService;
-import com.douzone.mysite.vo.BoardVo;
-import com.douzone.mysite.vo.UserVo;
-import com.douzone.web.util.WebUtil;
+import com.bitacademy.mysite.security.Auth;
+import com.bitacademy.mysite.security.AuthUser;
+import com.bitacademy.mysite.service.BoardService;
+import com.bitacademy.mysite.vo.BoardVo;
+import com.bitacademy.mysite.vo.UserVo;
+import com.bitacademy.web.util.WebUtil;
+
+
 
 @Controller
 @RequestMapping("/board")

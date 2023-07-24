@@ -1,4 +1,4 @@
-package com.douzone.web.util;
+package com.bitacademy.web.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
