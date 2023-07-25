@@ -1,21 +1,21 @@
 [src/main/java]
 	com
 	 |--- bitacademy
-	 |	|--- mysite	
-	 |	|	|--- config
-	 |	|	|	|--- AppConfig.java
-	 |	|	|	|--- WebConfig.java
-	 |	|	|--- app
-	 |	|	|     |--- DBConfig.java
-	 |	|	|     |--- MyBatisConfig.java
-	 |	|	|--- web
-	 |	|	|     |--- MvcConfig.java
-	 |	|	|     |--- SecurityConfig.java
-	 |	|	|     |--- MessageResourceConfig.java
-	 |	|	|     |--- FileuploadConfig.java
-	 |	|	|--- controller
-	 |	|	|--- service
-	 |	|	|--- repository
+	 |		|--- mysite	
+	 |		|	|--- config
+	 |		|	|	|--- AppConfig.java
+	 |		|	|	|--- WebConfig.java
+	 |		|	|--- app
+	 |		|	|     |--- DBConfig.java
+	 |		|	|     |--- MyBatisConfig.java
+	 |		|	|--- web
+	 |		|	|     |--- MvcConfig.java
+	 |		|	|     |--- SecurityConfig.java
+	 |		|	|     |--- MessageResourceConfig.java
+	 |		|	|     |--- FileuploadConfig.java
+	 |		|	|--- controller
+	 |		|	|--- service
+	 |		|	|--- repository
 
 [src/main/resources]
 	com
@@ -24,10 +24,10 @@
 	 |		|		|--- app
 	 |		|		|	  |--- jdbc.properties
 	 |		|		|	  |--- mybatis
-	 |		|		|	  	|--- configuration.xml
-	 |		|		|	  	|--- mappers
-	 |		|		|	  	|	|--- board.xml
-	 |		|		|	  	|	|--- user.xml
+	 |		|		|	  |		|--- configuration.xml
+	 |		|		|	  |		|--- mappers
+	 |		|		|	  |		|	|--- board.xml
+	 |		|		|	  |		|	|--- user.xml
 	 |		|		|--- web
 	 |		|		|      |--- fileupload.properties
 	 |		|		|      |--- messages
