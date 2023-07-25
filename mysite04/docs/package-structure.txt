@@ -18,9 +18,15 @@
 	 |		|	|--- repository
 
 [src/main/resources]
-	|--- jdbc.properties
-	|--- mybatis
-	|		|--- configuration.xml
-	|--- mappers
-			|--- board.xml
-			|--- user.xml
+	com
+	 |--- bitacademy
+	 |		|--- mysite	
+	 |		|	|--- config
+	 |		|	|		|--- app
+	 |		|	|		|	  |--- jdbc.properties	
+	 |		|	|		|	  |--- mybatis 
+	 |		|	|		|	  |		|--- configuration.xml	 
+	 |		|	|		|	  |		|--- mapper 
+	 |		|	|		|	  |		|	   |--- board.xml
+	 |		|	|		|	  |		|	   |--- user.xml
+
