@@ -3,16 +3,16 @@
 	 |--- bitacademy
 	 |		|--- mysite	
 	 |		|	|--- config
-	 |		|	|	|--- AppConfig.java
-	 |		|	|	|--- WebConfig.java
-	 |		|	|--- app
-	 |		|	|     |--- DBConfig.java
-	 |		|	|     |--- MyBatisConfig.java
-	 |		|	|--- web
-	 |		|	|     |--- MvcConfig.java
-	 |		|	|     |--- SecurityConfig.java
-	 |		|	|     |--- MessageResourceConfig.java
-	 |		|	|     |--- FileuploadConfig.java
+	 |		|	|		|--- AppConfig.java
+	 |		|	|		|--- WebConfig.java
+	 |		|	|		|--- app
+	 |		|	|   	|	  |--- DBConfig.java
+	 |		|	|   	|	  |--- MyBatisConfig.java
+	 |		|	|		|--- web
+	 |		|	|     	|	  |--- MvcConfig.java
+	 |		|	|     	|	  |--- SecurityConfig.java
+	 |		|	|     	|     |--- MessageResourceConfig.java
+	 |		|	|     	|	  |--- FileuploadConfig.java
 	 |		|	|--- controller
 	 |		|	|--- service
 	 |		|	|--- repository
